@@ -90,14 +90,16 @@
     }
     
     .hero-bg {
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab),
+                  url('hero-image.jpg') center/cover no-repeat;
+      background-size: 400% 400%, cover;
       animation: gradient-shift 15s ease infinite;
     }
     
     .dark .hero-bg {
-      background: linear-gradient(-45deg, #1e3a8a, #7c3aed, #0891b2, #059669);
-      background-size: 400% 400%;
+      background: linear-gradient(-45deg, #1e3a8a, #7c3aed, #0891b2, #059669),
+                  url('hero-image.jpg') center/cover no-repeat;
+      background-size: 400% 400%, cover;
       animation: gradient-shift 15s ease infinite;
     }
   </style>
