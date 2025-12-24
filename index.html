@@ -159,7 +159,7 @@
         </div>
         <h3 class="text-2xl font-bold mb-4">LLM 원리</h3>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          대규모 언어 모델이 어떻게 학습되고, 텍스트를 생성하는지 이해하세요. 트랜스포머 아키텍처와 주의 메커니즘의 기초.
+          대규모 언어 모델이 어떻게 학습되고, 텍스트를 생성하는지 이해하세요. 트랜스포머 아키텍처와 주의 메커니즘의 기초. LLM은 방대한 텍스트 데이터를 기반으로 학습하며, 입력된 텍스트의 패턴을 예측하여 자연스러운 응답을 생성합니다. 토큰화 과정을 통해 텍스트를 작은 단위로 나누고, 임베딩을 통해 벡터로 변환합니다. Attention 메커니즘은 문맥을 고려하여 중요한 부분에 집중하며, 확률적 샘플링으로 다양한 출력을 가능하게 합니다. 이러한 기술은 자연어 처리의 혁신을 가져왔지만, 계산 비용과 데이터 의존성이 높다는 단점도 있습니다. (약 250자)
         </p>
         <ul class="text-sm text-gray-500 dark:text-gray-500 space-y-2">
           <li>✓ 토큰화 (Tokenization)</li>
@@ -176,7 +176,7 @@
         </div>
         <h3 class="text-2xl font-bold mb-4">프롬프트 엔지니어링</h3>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          AI 모델에 최고의 결과를 얻기 위한 효과적인 프롬프트 작성법을 배우세요. 실무 팁과 기법들.
+          AI 모델에 최고의 결과를 얻기 위한 효과적인 프롬프트 작성법을 배우세요. 실무 팁과 기법들. 프롬프트 엔지니어링은 AI에게 명확하고 구체적인 지시를 주어 원하는 출력을 유도하는 기술입니다. 명확한 지시어를 사용하고, Few-Shot 프롬프팅으로 예시를 제공하며, 컨텍스트를 충분히 설명합니다. 반복적인 테스트와 개선을 통해 최적의 프롬프트를 개발할 수 있습니다. 이는 AI의 창의성과 정확성을 높이는 데 필수적이며, 다양한 분야에서 응용됩니다. 그러나 프롬프트의 품질이 결과에 큰 영향을 미치므로 숙련이 필요합니다. (약 250자)
         </p>
         <ul class="text-sm text-gray-500 dark:text-gray-500 space-y-2">
           <li>✓ 명확한 지시어</li>
@@ -193,7 +193,7 @@
         </div>
         <h3 class="text-2xl font-bold mb-4">AI 윤리</h3>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          책임감 있는 AI 개발과 사용의 중요성. 편향성, 투명성, 개인정보 보호에 대해 알아보세요.
+          책임감 있는 AI 개발과 사용의 중요성. 편향성, 투명성, 개인정보 보호에 대해 알아보세요. AI 윤리는 기술의 발전과 사회적 영향을 균형 있게 고려하는 분야입니다. 편향 감지 및 완화를 통해 공정한 결과를 추구하고, 투명성과 설명가능성을 높여 신뢰를 구축합니다. 개인정보 보호를 강화하고, 악용을 방지하는 메커니즘을 개발합니다. 이는 AI가 인간의 가치를 존중하고, 사회적 책임을 다하도록 합니다. 윤리적 고려는 AI의 지속 가능한 발전을 위해 필수적입니다. (약 250자)
         </p>
         <ul class="text-sm text-gray-500 dark:text-gray-500 space-y-2">
           <li>✓ 편향 감지 및 완화</li>
@@ -204,6 +204,55 @@
       </div>
       
     </div>
+    
+    <!-- 비교 표 섹션 -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-center mb-8">세 가지 주요 영역 비교</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg">
+          <thead class="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">비교 항목</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">LLM 원리</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">프롬프트 엔지니어링</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">AI 윤리</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">주요 목적</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">AI 모델의 내부 작동 원리 이해</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">AI에게 효과적인 지시를 주어 최적의 출력 유도</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">AI 개발과 사용의 윤리적 책임 보장</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">주요 기술/개념</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">트랜스포머, Attention, 토큰화, 임베딩</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">Few-Shot Learning, 컨텍스트 설정, 반복 개선</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">편향 완화, 투명성, 개인정보 보호</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">장점</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">텍스트 생성의 정확성과 다양성 향상</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">사용자가 AI를 더 효과적으로 활용 가능</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">사회적 신뢰 구축과 악용 방지</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">단점/고려사항</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">높은 계산 비용과 데이터 요구량</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">프롬프트 품질에 결과가 크게 의존</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">구현의 복잡성과 추가 비용 발생</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">적용 분야</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">연구, 모델 개발, 기술 이해</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">콘텐츠 생성, 코드 작성, 업무 자동화</td>
+              <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">정책 수립, 규제 준수, 사회적 영향 평가</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
     
     <!-- 추가 정보 섹션 -->
     <section class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-12 border-l-4 border-blue-500">
