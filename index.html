@@ -1,65 +1,304 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>생성형 AI 소개</title>
+  <title>생성형 AI 입문 - 미래를 학습하세요</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;margin:0;color:#222;background:#f7f9fc}
-    .wrap{max-width:900px;margin:40px auto;padding:24px;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(18,38,63,0.08)}
-    h1{margin:0 0 8px;font-size:28px}
-    p.lead{margin:0 0 18px;color:#555}
-    section{margin:18px 0}
-    h2{margin:0 0 8px;font-size:18px}
-    ul{margin:8px 0 0 20px}
-    footer{margin-top:26px;color:#777;font-size:13px}
-    code{background:#eee;padding:2px 6px;border-radius:4px;font-size:90%}
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* 다크 모드 */
+    .dark {
+      color-scheme: dark;
+    }
+    
+    /* 스티키 네비게이션 Blur 효과 */
+    nav {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .dark nav {
+      background-color: rgba(17, 24, 39, 0.7);
+    }
+    
+    /* 그라데이션 보더 호버 효과 */
+    .card {
+      position: relative;
+      border: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
+      transition: all 0.3s ease;
+    }
+    
+    .dark .card {
+      background: linear-gradient(#1f2937, #1f2937) padding-box,
+                  linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
+    }
+    
+    .card:hover {
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #ec4899, #f59e0b) border-box;
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+    }
+    
+    .dark .card:hover {
+      background: linear-gradient(#1f2937, #1f2937) padding-box,
+                  linear-gradient(135deg, #ec4899, #f59e0b) border-box;
+      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
+    }
+    
+    /* 입체적 버튼 */
+    .btn-hero {
+      position: relative;
+      display: inline-block;
+      padding: 14px 32px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+      transform: translateZ(0);
+    }
+    
+    .btn-hero:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-hero:active {
+      transform: translateY(-2px);
+    }
+    
+    /* 히어로 섹션 배경 애니메이션 */
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .hero-bg {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient-shift 15s ease infinite;
+    }
+    
+    .dark .hero-bg {
+      background: linear-gradient(-45deg, #1e3a8a, #7c3aed, #0891b2, #059669);
+      background-size: 400% 400%;
+      animation: gradient-shift 15s ease infinite;
+    }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>생성형 AI (Generative AI)</h1>
-      <p class="lead">텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성하는 인공지능 기술을 간단히 소개합니다.</p>
-    </header>
-
-    <section id="what">
-      <h2>정의</h2>
-      <p>생성형 AI는 학습한 데이터 분포를 바탕으로 새로운 샘플을 생성하는 모델들을 말합니다. 예: 텍스트 생성, 이미지 합성, 음악 작곡 등.</p>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+  
+  <!-- 스티키 네비게이션 바 -->
+  <nav class="fixed top-0 w-full z-50 sticky-nav shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+          AI
+        </div>
+        <span class="font-bold text-xl">AI 입문</span>
+      </div>
+      
+      <div class="flex items-center space-x-6">
+        <a href="#llm" class="hover:text-blue-500 transition">LLM 원리</a>
+        <a href="#prompt" class="hover:text-blue-500 transition">프롬프트</a>
+        <a href="#ethics" class="hover:text-blue-500 transition">윤리</a>
+        
+        <!-- 다크 모드 토글 -->
+        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+          <svg id="sun-icon" class="w-5 h-5 block" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zm2.828-2.828l1.414-1.414a1 1 0 00-1.414-1.414l-1.414 1.414a1 1 0 001.414 1.414zM13 11a1 1 0 110-2h2a1 1 0 110 2h-2zm-6 0a1 1 0 110-2H7a1 1 0 110 2H7z" clip-rule="evenodd"/>
+          </svg>
+          <svg id="moon-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 히어로 섹션 -->
+  <section class="hero-bg pt-32 pb-20 px-4 text-center text-white min-h-screen flex items-center justify-center">
+    <div class="max-w-3xl">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+        AI의 미래를<br>학습하세요
+      </h1>
+      <p class="text-xl md:text-2xl mb-10 opacity-90 font-light">
+        생성형 AI의 원리부터 실무까지, 완벽한 입문 가이드
+      </p>
+      <button class="btn-hero mb-6">지금 시작하기</button>
+      <p class="text-sm opacity-75">↓ 아래로 스크롤하여 학습을 시작하세요</p>
+    </div>
+  </section>
+  
+  <!-- 메인 콘텐츠 -->
+  <main class="max-w-6xl mx-auto px-4 py-20">
+    
+    <!-- 3개 섹션 그리드 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      
+      <!-- 카드 1: LLM 원리 -->
+      <div id="llm" class="card p-8 rounded-lg">
+        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white mb-6 text-xl">
+          🧠
+        </div>
+        <h3 class="text-2xl font-bold mb-4">LLM 원리</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          대규모 언어 모델이 어떻게 학습되고, 텍스트를 생성하는지 이해하세요. 트랜스포머 아키텍처와 주의 메커니즘의 기초.
+        </p>
+        <ul class="text-sm text-gray-500 dark:text-gray-500 space-y-2">
+          <li>✓ 토큰화 (Tokenization)</li>
+          <li>✓ 임베딩 (Embedding)</li>
+          <li>✓ Attention 메커니즘</li>
+          <li>✓ 확률적 샘플링</li>
+        </ul>
+      </div>
+      
+      <!-- 카드 2: 프롬프트 엔지니어링 -->
+      <div id="prompt" class="card p-8 rounded-lg">
+        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white mb-6 text-xl">
+          ⚡
+        </div>
+        <h3 class="text-2xl font-bold mb-4">프롬프트 엔지니어링</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          AI 모델에 최고의 결과를 얻기 위한 효과적인 프롬프트 작성법을 배우세요. 실무 팁과 기법들.
+        </p>
+        <ul class="text-sm text-gray-500 dark:text-gray-500 space-y-2">
+          <li>✓ 명확한 지시어</li>
+          <li>✓ Few-Shot 프롬프팅</li>
+          <li>✓ 컨텍스트 활용</li>
+          <li>✓ 반복과 개선</li>
+        </ul>
+      </div>
+      
+      <!-- 카드 3: AI 윤리 -->
+      <div id="ethics" class="card p-8 rounded-lg">
+        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center text-white mb-6 text-xl">
+          ⚖️
+        </div>
+        <h3 class="text-2xl font-bold mb-4">AI 윤리</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          책임감 있는 AI 개발과 사용의 중요성. 편향성, 투명성, 개인정보 보호에 대해 알아보세요.
+        </p>
+        <ul class="text-sm text-gray-500 dark:text-gray-500 space-y-2">
+          <li>✓ 편향 감지 및 완화</li>
+          <li>✓ 투명성과 설명가능성</li>
+          <li>✓ 개인정보 보호</li>
+          <li>✓ 악용 방지</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- 추가 정보 섹션 -->
+    <section class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-12 border-l-4 border-blue-500">
+      <h2 class="text-3xl font-bold mb-6">왜 생성형 AI를 배워야 할까?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="font-semibold text-lg mb-3 flex items-center">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white mr-3 text-sm">1</span>
+            미래의 필수 기술
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            생성형 AI는 이미 업무 자동화, 창의성 증대, 의사결정 지원 등 다양한 분야에서 혁신을 일으키고 있습니다.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-3 flex items-center">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white mr-3 text-sm">2</span>
+            경쟁력 확보
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            AI 기술의 이해와 활용 능력은 모든 직종에서 경쟁력 있는 인재가 되기 위한 필수 요소입니다.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-3 flex items-center">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white mr-3 text-sm">3</span>
+            창의적 도구
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            콘텐츠 제작, 코드 작성, 아이디어 개발 등 창의적인 작업에서 AI를 보조 도구로 활용할 수 있습니다.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-3 flex items-center">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white mr-3 text-sm">4</span>
+            윤리적 이해
+          </h4>
+          <p class="text-gray-700 dark:text-gray-300">
+            AI의 한계와 윤리 문제를 이해하여 책임감 있게 사용하고 사회에 긍정적 영향을 미칠 수 있습니다.
+          </p>
+        </div>
+      </div>
     </section>
-
-    <section id="how">
-      <h2>작동 원리</h2>
-      <p>대규모 데이터로 사전 학습한 뒤, 입력(프롬프트)에 따라 다음 토큰을 예측하거나 잠재공간을 샘플링하여 출력을 만듭니다. 대표적인 기술로는 트랜스포머(Transformer)와 확률적 생성모델이 있습니다.</p>
-    </section>
-
-    <section id="use">
-      <h2>활용 사례</h2>
-      <ul>
-        <li>문서 요약·작성 및 코드 자동 생성</li>
-        <li>이미지·영상 생성 및 편집</li>
-        <li>챗봇·대화 에이전트</li>
-        <li>콘텐츠 개인화 및 크리에이티브 도구</li>
-      </ul>
-    </section>
-
-    <section id="proscons">
-      <h2>장단점</h2>
-      <ul>
-        <li><strong>장점:</strong> 생산성 향상, 아이디어 확장, 반복 작업 자동화</li>
-        <li><strong>단점:</strong> 허위 정보(판단 오류), 편향성, 저작권·프라이버시 문제</li>
-      </ul>
-    </section>
-
-    <section id="ethics">
-      <h2>안전과 윤리</h2>
-      <p>책임 있는 사용을 위해 출처 표기, 편향·악용 방지, 개인정보 보호, 그리고 인간 감독(검토)이 필요합니다.</p>
-    </section>
-
-    <footer>
-      <p>간단 페이지 — 더 자세한 내용을 원하시면 말씀해 주세요.</p>
-      <p>파일: <a href="index.html">index.html</a></p>
-    </footer>
-  </div>
+    
+  </main>
+  
+  <!-- 푸터 -->
+  <footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-12 mt-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="mb-2 font-semibold text-white">생성형 AI 입문자를 위한 학습 사이트</p>
+      <p class="text-sm">HTML5 + Tailwind CSS + Google Fonts</p>
+      <p class="text-xs mt-4 opacity-60">© 2024 AI Learning Platform. 모든 내용은 교육용입니다.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // 다크 모드 토글
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const html = document.documentElement;
+    
+    // 저장된 테마 확인
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      html.classList.add('dark');
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    }
+    
+    // 토글 이벤트
+    themeToggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      }
+    });
+    
+    // 부드러운 스크롤
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
