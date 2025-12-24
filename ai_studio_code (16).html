@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이탈리아·스위스 현장체험학습 운영 가이드</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Mermaid.js for Diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #004d40, #2c3e50);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation / TOC */
+        .toc {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .toc li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            background-color: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .toc li a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Slide Cards */
+        .slide-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .slide-number {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        /* Content Styling */
+        .points ul {
+            padding-left: 20px;
+        }
+
+        .points li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .points strong {
+            color: #2980b9;
+        }
+
+        .description-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid #95a5a6;
+            margin-top: 20px;
+        }
+
+        .description-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            color: #555;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Diagrams */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+        }
+
+        /* Analogy Section */
+        .analogy {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .analogy h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .analogy p {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide-card {
+                padding: 20px;
+            }
+            .slide-title {
+                font-size: 1.4rem;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>이탈리아·스위스 현장체험학습<br>및 가족 여행 운영 가이드</h1>
+        <p>안전하고 교육적인 국외 체험학습을 위한 종합 매뉴얼</p>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+        <h3>목차 (Slide Navigation)</h3>
+        <ul>
+            <li><a href="#slide1">1. 개요 및 목적</a></li>
+            <li><a href="#slide2">2. 유형 및 규모</a></li>
+            <li><a href="#slide3">3. 추진 절차</a></li>
+            <li><a href="#slide4">4. 준비물 및 짐 싸기</a></li>
+            <li><a href="#slide5">5. 환전 및 결제</a></li>
+            <li><a href="#slide6">6. 스위스 교통 패스</a></li>
+            <li><a href="#slide7">7. 숙소 선정 전략</a></li>
+            <li><a href="#slide8">8. 음식 및 물 관리</a></li>
+            <li><a href="#slide9">9. 융프라우 탐방</a></li>
+            <li><a href="#slide10">10. 스위스 박물관</a></li>
+            <li><a href="#slide11">11. 이탈리아 인문학</a></li>
+            <li><a href="#slide12">12. 바티칸 투어</a></li>
+            <li><a href="#slide13">13. 안전 사고 예방</a></li>
+            <li><a href="#slide14">14. 계약 및 위약금</a></li>
+            <li><a href="#slide15">15. 교통 안전 관리</a></li>
+            <li><a href="#slide16">16. 건강 수칙</a></li>
+            <li><a href="#slide17">17. 이동 경로</a></li>
+            <li><a href="#slide18">18. 디지털 도구</a></li>
+            <li><a href="#slide19">19. 보험 가입</a></li>
+            <li><a href="#slide20">20. 사후 관리</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slide 1 -->
+    <section id="slide1" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">1. 현장체험학습의 개요 및 목적</h2>
+            <span class="slide-number">Slide 1</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>교육과정 연계 운영 원칙</strong>: 학교 밖에서 이루어지는 체험 활동은 반드시 교육과정과 연계하여 학생들의 자율성과 창의성을 함양하고 개인의 꿈을 키우는 기회를 제공함.</li>
+                <li><strong>글로벌 인문학적 소양 강화</strong>: 이탈리아의 고대·근대 서양사 현장과 스위스의 대자연을 직접 경험하며 인문학적 식견을 넓히고 세계 시민 의식을 기르는 데 중점을 둠.</li>
+                <li><strong>체험 중심의 다채로운 활동</strong>: 교실 내 지식 습득을 넘어 현지에서의 박물관 투어, 예술 감상, 자연 액티비티를 통해 지식의 외연을 확장하고 전인적 성장을 도모함.</li>
+                <li><strong>안전하고 체계적인 운영 지향</strong>: 전라남도교육청의 매뉴얼을 준수하여 철저한 사전 준비와 안전 대책을 수립함으로써 사고 없는 유익한 교육 활동이 되도록 관리함.</li>
+                <li><strong>민주적 의사결정 과정 준수</strong>: 학생 선호도 조사와 학부모 동의를 거쳐 방문국과 목적을 결정하고, 체험학습위원회의 심의를 통해 운영의 투명성과 공정성을 확보함.</li>
+            </ul>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>현장체험학습은 학교 교육과정의 연장선으로, 특히 국외에서 진행되는 이탈리아와 스위스 여행은 학생들에게 서양 문화의 근간을 배우고 대자연의 경이로움을 체험하게 하는 소중한 기회입니다. 전라남도교육청 매뉴얼에 따르면, 이러한 활동은 단순히 관광에 그치지 않고 교육적 목적이 명확해야 하며, 사전에 치밀한 계획 수립이 필수적입니다. 이탈리아의 로마, 피렌체 등에서 미켈란젤로와 라파엘로의 예술 세계를 접하고, 스위스의 융프라우 지역에서 알프스의 환경을 관찰하는 과정은 학생들의 창의적 사고를 자극합니다. 모든 과정은 학생 안전을 최우선으로 하며, 학교 구성원 간의 민주적인 합의를 통해 장소와 프로그램을 선정하여 교육적 효과를 극대화해야 합니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section id="slide2" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">2. 현장체험학습 유형 및 규모 기준</h2>
+            <span class="slide-number">Slide 2</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>수학여행의 소규모 운영 원칙</strong>: 학생 안전 관리와 내실 있는 학습을 위해 100명 미만의 소규모 테마형 운영을 기본으로 하되, 대규모 추진 시 엄격한 조건을 충족해야 함.</li>
+                <li><strong>국외 체험학습의 조건부 허용</strong>: 국외 수학여행은 학부모 동의율 90% 이상 확보와 도교육청의 사전 컨설팅 실시를 모두 충족해야만 추진이 가능한 특수 유형임.</li>
+                <li><strong>안전요원 배치 의무 준수</strong>: 국외 활동의 경우 운영 규모와 관계없이 학생 50명당 1명 이상의 안전요원을 반드시 배치하여 현지에서의 돌발 사고에 신속히 대응함.</li>
+                <li><strong>1일형 및 숙박형 활동 구분</strong>: 체험 목적에 따라 숙박을 동반하는 수학여행과 수련활동, 또는 숙박 없이 진행되는 1일형 현장체험학습으로 분류하여 매뉴얼을 적용함.</li>
+                <li><strong>규모별 컨설팅 실시 의무</strong>: 대규모(150명 이상) 및 국외 수학여행은 계획의 적정성 확인을 위해 교육청의 컨설팅을 의무적으로 받아야 하며 결과를 계획에 반영함.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 1. 수학여행 규모별 운영 및 승인 기준</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>소규모</th>
+                        <th>중규모</th>
+                        <th>대규모</th>
+                        <th>국외</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>학생 수</td>
+                        <td>100명 미만</td>
+                        <td>100~149명</td>
+                        <td>150명 이상</td>
+                        <td>제한 없음</td>
+                    </tr>
+                    <tr>
+                        <td>학부모 동의</td>
+                        <td>학교 자율</td>
+                        <td>80% 이상</td>
+                        <td>90% 이상</td>
+                        <td>90% 이상</td>
+                    </tr>
+                    <tr>
+                        <td>컨설팅</td>
+                        <td>권장</td>
+                        <td>권장</td>
+                        <td>의무</td>
+                        <td>의무</td>
+                    </tr>
+                    <tr>
+                        <td>안전요원</td>
+                        <td>50명당 1명</td>
+                        <td>50명당 1명</td>
+                        <td>50명당 1명</td>
+                        <td>50명당 1명</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>국외 현장체험학습은 국내 활동보다 훨씬 엄격한 기준이 적용됩니다. 이탈리아와 스위스 같은 장거리 여행은 학생 1인당 경비가 높고 안전 관리 요소가 많기 때문에 학부모의 90% 이상이 찬성해야 하며, 교육청 전문가들로 구성된 지원단의 컨설팅을 통해 계획의 빈틈을 메워야 합니다. 특히 안전요원은 단순 인솔 보조를 넘어 응급처치 및 구조 자격을 갖춘 인력이어야 하며, 국외 여행 중 발생할 수 있는 식중독, 감염병, 교통사고 등에 대비한 체계적인 대응 매뉴얼을 갖추는 것이 필수입니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section id="slide3" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">3. 국외 체험학습 추진 절차 시각화</h2>
+            <span class="slide-number">Slide 3</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>기본계획 및 위원회 구성</strong>: 가정통신문을 통해 학생 선호도와 학부모 동의를 조사하고, 교직원과 학부모가 참여하는 체험학습위원회를 구성하여 방문국과 일정을 결정함.</li>
+                <li><strong>사전 답사 및 안전 점검</strong>: 실제 인솔 담당자가 현지를 방문하여 숙박 시설의 소방 안전, 식당의 위생 상태, 체험 장소의 동선 등을 직접 확인하고 보고서를 작성함.</li>
+                <li><strong>학교운영위원회 심의 및 계약</strong>: 사전 답사 결과와 수익자 부담 경비 등을 종합하여 심의를 받은 후, 조달 시스템(G2B) 등을 통해 투명하게 업체 계약을 진행함.</li>
+                <li><strong>사전 교육 및 실행 단계</strong>: 학생과 인솔자를 대상으로 안전 수칙, 성범죄 예방, 현지 문화 교육을 실시하고, 계획된 일정에 따라 안전하게 탐방 프로그램을 운영함.</li>
+                <li><strong>사후 관리 및 정산 공개</strong>: 활동 종료 후 10일 이내에 경비를 정산하고, 만족도 설문 조사 결과를 분석하여 도교육청 홈페이지에 공개함으로써 운영의 투명성을 높임.</li>
+            </ul>
+        </div>
+        <div class="mermaid-container">
+            <pre class="mermaid">
+graph TD
+    A[기본계획 수립 및 동의 조사] --> B[현장체험학습위원회 구성]
+    B --> C[도교육청 사전 컨설팅]
+    C --> D[현지 사전 답사 실시]
+    D --> E[학교운영위원회 최종 심의]
+    E --> F[업체 계약 및 보험 가입]
+    F --> G[사전 안전 및 문화 교육]
+    G --> H[이탈리아·스위스 탐방 실행]
+    H --> I[정산 및 결과 사후 공개]
+            </pre>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>국외 체험학습은 준비부터 마무리까지 단계별 절차를 누락 없이 이행하는 것이 중요합니다. 초기 단계에서는 학생들의 요구를 반영한 코스 선정이 이루어져야 하며, 이탈리아의 유적지나 스위스의 박물관 등 교육적 가치가 높은 장소를 포함해야 합니다. 특히 사전 답사는 여행사에 위임할 수 없으며 인솔 책임자가 직접 가서 안전 요소를 점검해야 합니다. 계약 단계에서는 공정거래위원회의 표준약관을 적용하여 학생들의 권익을 보호하고, 여행자 보험 가입 시 상해와 의료비 보장 범위를 충분히 확보해야 합니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section id="slide4" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">4. 유럽 여행 필수 준비물 및 짐 싸기 팁</h2>
+            <span class="slide-number">Slide 4</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>캐리어 및 가방 선정 전략</strong>: 유럽의 소매치기를 대비하여 지퍼를 쉽게 찢을 수 없는 프레임형 금고식 캐리어를 선택하고, 공항에서 유용한 가벼운 크로스백을 준비함.</li>
+                <li><strong>소매치기 방지 안전 아이템</strong>: 카라비너 스프링 스트랩으로 지갑과 가방을 연결하고, 핸드폰에는 어깨 스트랩이나 손목 스프링을 장착하여 도난 사고를 원천 차단함.</li>
+                <li><strong>피부 및 위생 보호 용품</strong>: 유럽의 석회수로부터 피부를 지키기 위해 여행용 샤워기 필터와 리필 필터를 지참하며, 호텔 침구 위생을 위한 베드버그 퇴치 스프레이를 챙김.</li>
+                <li><strong>전기 및 통신 기기 준비</strong>: 다양한 국가에서 사용 가능한 멀티 어댑터와 C타입 포트가 넉넉한 충전기를 준비하고, 방문국(이탈리아, 스위스)이 모두 포함된 다국가 유심을 구매함.</li>
+                <li><strong>비상 서류 및 데이터 보관</strong>: 여권 분실 시를 대비하여 여권 사본과 비자 서류, 숙소 바우처 등을 출력하여 별도 보관하고 핸드폰에도 사진으로 저장해 둠.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 2. 유럽 여행 준비물 체크리스트</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>카테고리</th>
+                        <th>필수 아이템</th>
+                        <th>용도 및 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>안전</td>
+                        <td>스프링 스트랩, 와이어 자물쇠</td>
+                        <td>소매치기 예방, 기차 내 짐 묶기</td>
+                    </tr>
+                    <tr>
+                        <td>위생</td>
+                        <td>샤워 필터, 베드버그 스프레이</td>
+                        <td>석회수 방지, 숙소 해충 예방</td>
+                    </tr>
+                    <tr>
+                        <td>전자</td>
+                        <td>멀티 어댑터, 보조 배터리</td>
+                        <td>전압 변환, 장시간 이동 대비</td>
+                    </tr>
+                    <tr>
+                        <td>서류</td>
+                        <td>여권 사본, 여행자 보험증권</td>
+                        <td>분실 및 사고 대비 증빙</td>
+                    </tr>
+                    <tr>
+                        <td>통신</td>
+                        <td>다국가 유심 (42개국 지원 등)</td>
+                        <td>이탈리아-스위스 로밍 해결</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>유럽 여행, 특히 이탈리아와 스위스를 장기간 여행할 때는 꼼꼼한 짐 싸기가 여행의 질을 결정합니다. 소매치기가 빈번한 지역이 포함되므로 카라비너나 와이어 자물쇠를 활용해 소지품을 가방에 고정하는 지혜가 필요합니다. 또한 스위스의 높은 고도와 이탈리아의 강한 햇살에 대비해 선크림과 선글라스는 필수이며, 유심 구매 시 스위스가 EU 소속이 아님을 고려하여 방문 국가 포함 여부를 반드시 확인해야 합니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section id="slide5" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">5. 통화 환전 및 결제 시스템 활용</h2>
+            <span class="slide-number">Slide 5</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>이중 통화 체계 이해</strong>: 이탈리아는 유로(EUR)를, 스위스는 스위스 프랑(CHF)을 사용하므로 각각의 통화를 적절한 비율로 환전하여 준비해야 함.</li>
+                <li><strong>유로 통화의 유용성 활용</strong>: 스위스 내 많은 관광지와 상점에서도 유로 결제가 가능하므로, 이탈리아와 공통으로 사용 가능한 유로를 조금 더 넉넉히 환전하는 것이 전략적임.</li>
+                <li><strong>트래블 체크카드 메인 사용</strong>: 실시간 환전과 수수료 면제 혜택이 있는 트래블 월렛이나 신한 솔(SOL) 트래블 카드 등을 메인 결제 수단으로 활용하여 현금을 최소화함.</li>
+                <li><strong>비상용 현금 확보</strong>: 카드 결제가 불가능한 소규모 상점이나 유료 화장실 이용을 위해 소액의 현지 통화(특히 1.5~2프랑 동전)를 항상 소지함.</li>
+                <li><strong>실시간 환율 우대 적용</strong>: 은행 앱을 통해 100% 환율 우대를 받으며 필요한 금액만큼 즉시 충전하여 현지 ATM에서 인출하는 방식을 통해 도난 위험과 비용을 동시에 줄임.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 3. 방문국별 통화 및 결제 정보</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>국가</th>
+                        <th>사용 통화</th>
+                        <th>주요 결제 수단</th>
+                        <th>현지 팁</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>이탈리아</td>
+                        <td>유로 (EUR)</td>
+                        <td>트래블 카드, 유로 현금</td>
+                        <td>소매치기 주의, 카드 선호</td>
+                    </tr>
+                    <tr>
+                        <td>스위스</td>
+                        <td>스위스 프랑 (CHF)</td>
+                        <td>트래블 카드, 프랑 현금</td>
+                        <td>유로 통용 가능(거스름돈은 프랑)</td>
+                    </tr>
+                    <tr>
+                        <td>공통</td>
+                        <td>트래블 월렛/솔</td>
+                        <td>ATM 인출 및 직결제</td>
+                        <td>수수료 절감 및 실시간 환전</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section id="slide6" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">6. 스위스 교통 패스 비교 및 선택</h2>
+            <span class="slide-number">Slide 6</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>스위스 트래블 패스 혜택</strong>: 기차, 버스, 유람선을 무제한 이용할 수 있으며 500여 곳의 박물관 무료 입장과 케이블카 할인 혜택이 포함되어 스위스 일주에 최적임.</li>
+                <li><strong>유레일 패스와의 차별점</strong>: 유럽 여러 나라를 연계할 때는 유레일 패스가 유리할 수 있으나, 스위스 내 버스나 유람선 혜택은 스위스 트래블 패스가 훨씬 강력함.</li>
+                <li><strong>융프라우 VIP 패스 활용</strong>: 융프라우 지역을 집중 탐방한다면 한국인 전용 융프라우 VIP 패스를 통해 산악 열차 할인과 컵라면 무료 제공 등의 특화된 혜택을 누림.</li>
+                <li><strong>SBB 앱을 통한 실시간 관리</strong>: 스위스 철도청(SBB) 앱을 설치하여 정확한 열차 시간, 플랫폼 정보, 패스 등록 상태를 실시간으로 확인하며 유동적으로 이동함.</li>
+                <li><strong>어린이 동반 할인 제도</strong>: 부모가 패스를 소지한 경우 만 15세 미만 어린이는 '패밀리 카드'를 통해 무료로 동반 탑승이 가능하여 가족 여행 경비를 크게 절감함.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 4. 스위스 교통 패스 비교 요약</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>스위스 트래블 패스</th>
+                        <th>유레일 스위스 패스</th>
+                        <th>융프라우 VIP 패스</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>주요 범위</td>
+                        <td>스위스 전역 무제한</td>
+                        <td>기차 중심 (버스/트램 제한)</td>
+                        <td>융프라우 지역 특화</td>
+                    </tr>
+                    <tr>
+                        <td>추가 혜택</td>
+                        <td>박물관 500곳 무료, 유람선</td>
+                        <td>기차 요금 할인 중심</td>
+                        <td>산악 열차, 컵라면 등</td>
+                    </tr>
+                    <tr>
+                        <td>추천 대상</td>
+                        <td>4일 이상 스위스 집중 여행</td>
+                        <td>유럽 여러 국가 연계 여행</td>
+                        <td>융프라우 지역 집중 방문객</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 7 -->
+    <section id="slide7" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">7. 숙소 선정 전략 및 지역별 특징</h2>
+            <span class="slide-number">Slide 7</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>이동 편의를 위한 역세권 숙소</strong>: 짐이 많은 여행의 특성상 인터라켄 동역(Ost)이나 슈피츠 역 등 기차역에서 도보 5~10분 이내의 숙소를 잡는 것이 체력 소모를 줄이는 핵심임.</li>
+                <li><strong>취사 시설을 갖춘 아파트 선호</strong>: 스위스의 높은 외식 물가를 고려하여 주방이 딸린 에어비앤비나 아파트먼트형 숙소를 예약해 직접 요리해 먹음으로써 경비를 절감함.</li>
+                <li><strong>전망과 액티비티 중심지 선택</strong>: 피르스트 액티비티나 별 구경을 원한다면 그린델발트에서 2박 이상 머무는 것을 추천하며, 인터라켄은 주변 도시 당일치기 거점으로 활용함.</li>
+                <li><strong>스위스 스타일 샬렛의 특징</strong>: 나무로 지어진 전통 샬렛은 낭만적이지만 층간 소음이나 방음 문제가 있을 수 있으므로 현대식 아파트와 비교하여 선택함.</li>
+                <li><strong>지자체 안심 서비스 확인</strong>: 현장체험학습 시에는 지자체에서 제공하는 안심 서비스를 통해 숙소의 소방, 위생, 전기 안전 점검 결과를 미리 확인하여 학생들의 안전을 보장함.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 5. 스위스 주요 숙박 거점 비교</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>지역</th>
+                        <th>특징</th>
+                        <th>장점</th>
+                        <th>단점</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>인터라켄 동역</td>
+                        <td>교통의 허브</td>
+                        <td>모든 지역 이동이 매우 편리함</td>
+                        <td>소음 발생 가능, 관광객 밀집</td>
+                    </tr>
+                    <tr>
+                        <td>그린델발트</td>
+                        <td>알프스 산맥 뷰</td>
+                        <td>액티비티 접근성 최고, 풍경 우수</td>
+                        <td>인터라켄보다 숙박비 높음</td>
+                    </tr>
+                    <tr>
+                        <td>슈피츠</td>
+                        <td>조용한 호수 마을</td>
+                        <td>인터라켄보다 덜 붐비고 경치 좋음</td>
+                        <td>숙소 옵션이 상대적으로 적음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 8 -->
+    <section id="slide8" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">8. 음식 및 물 관리 전략</h2>
+            <span class="slide-number">Slide 8</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>트래블 전기 포트 활용</strong>: 부피를 줄일 수 있는 실리콘 접이식 전기 포트를 지참하여 숙소에서 햇반, 컵라면, 국물 요리 등을 직접 조리해 먹으며 위생과 비용을 챙김.</li>
+                <li><strong>저가형 마트(알디, 리들) 이용</strong>: 스위스 국민 마트인 쿱(Coop)보다 독일계 마트인 알디(ALDI)나 리들(LIDL)이 식료품 가격이 훨씬 저렴하므로 이를 적극 활용함.</li>
+                <li><strong>수돗물 식수 활용 및 생수 준비</strong>: 스위스 수돗물은 마실 수 있는 물이므로 텀블러를 준비해 비용을 아끼되, 석회수가 걱정된다면 브리타 필터나 생수를 마트에서 미리 구입함.</li>
+                <li><strong>실온 보관 식품 비축</strong>: 장기 여행에 적합한 볶음 김치, 고추참치, 김, 포카리스웨트 분말 등 실온에서 상하지 않는 반찬 위주로 준비하여 식사의 질을 높임.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 6. 유럽 여행 식사 해결 방법 비교</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>방법</th>
+                        <th>장점</th>
+                        <th>단점</th>
+                        <th>팁</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>현지 레스토랑</td>
+                        <td>현지 미식 체험, 낭만적</td>
+                        <td>매우 비싼 가격 (한 끼 10~20만)</td>
+                        <td>런치 메뉴나 '오늘의 요리' 활용</td>
+                    </tr>
+                    <tr>
+                        <td>마트 장보기</td>
+                        <td>저렴한 비용, 다양한 식재료</td>
+                        <td>요리 시간 소요, 뒷정리</td>
+                        <td>알디, 리들이 쿱보다 저렴함</td>
+                    </tr>
+                    <tr>
+                        <td>한국 식품 조리</td>
+                        <td>입맛 유지, 가장 경제적</td>
+                        <td>짐 부피 증가</td>
+                        <td>실리콘 전기 포트 필수 지참</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 9 -->
+    <section id="slide9" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">9. 스위스 융프라우 지역 탐방 가이드</h2>
+            <span class="slide-number">Slide 9</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>융프라우요흐의 상징성</strong>: '하늘과 가장 가까운 유럽'이라는 별칭답게 고산 열차를 타고 올라가 만년설을 감상하며 스노우펀 액티비티(눈썰매, 짚라인)를 즐길 수 있음.</li>
+                <li><strong>기상 상황에 따른 유동적 일정</strong>: 융프라우 지역은 날씨 변화가 심하므로 매일 아침 웹캠으로 정상 날씨를 확인한 후 맑은 날을 골라 올라가는 것이 필수적임.</li>
+                <li><strong>어린이를 위한 멘리헨 놀이터</strong>: 고도가 낮아 고산병 위험이 적은 멘리헨에는 자연 친화적인 나무 놀이터와 소 모양 전망대가 있어 아이와 함께 방문하기에 최적임.</li>
+                <li><strong>특별한 추억, 엽서 보내기</strong>: 융프라우요흐 정상의 우체통에서 직접 엽서를 써서 보내는 체험은 여행의 감동을 한국으로 이어주는 생소하고 즐거운 경험이 됨.</li>
+                <li><strong>동신항운 할인 쿠폰 지참</strong>: 융프라우 VIP 패스 구매 시 필수적인 동신항운 쿠폰을 인원수대로 출력해 가면 큰 폭의 할인과 정상에서의 컵라면 혜택을 받을 수 있음.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 7. 융프라우 지역 주요 명소 특징</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>명소</th>
+                        <th>해발 고도</th>
+                        <th>주요 활동</th>
+                        <th>특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>융프라우요흐</td>
+                        <td>3,454m</td>
+                        <td>만년설 감상, 눈썰매, 엽서 쓰기</td>
+                        <td>랜드마크, 고산병 주의 필요</td>
+                    </tr>
+                    <tr>
+                        <td>멘리헨</td>
+                        <td>2,230m</td>
+                        <td>로열 워크 하이킹, 나무 놀이터</td>
+                        <td>아이와 가기 좋음, 완만한 코스</td>
+                    </tr>
+                    <tr>
+                        <td>피르스트</td>
+                        <td>2,168m</td>
+                        <td>클리프 워크, 글라이더, 트로티바이크</td>
+                        <td>액티비티의 천국</td>
+                    </tr>
+                    <tr>
+                        <td>뮤렌</td>
+                        <td>1,638m</td>
+                        <td>통나무 포토존, 산책</td>
+                        <td>자동차 없는 청정 마을</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 10 -->
+    <section id="slide10" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">10. 스위스 주요 박물관 및 체험 코스</h2>
+            <span class="slide-number">Slide 10</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>루체른 교통 박물관</strong>: 스위스에서 가장 방문객이 많은 곳으로 도로, 철도, 해상, 항공 교통의 과거와 미래를 다양한 인터랙티브 전시를 통해 체험할 수 있음.</li>
+                <li><strong>취리히 린트 초콜릿 박물관</strong>: 9m 높이의 거대한 초콜릿 분수가 압권이며, 초콜릿의 역사 학습과 함께 마스터 쇼콜라티에의 가이드에 따라 직접 초콜릿을 만드는 체험이 가능함.</li>
+                <li><strong>그뤼에르 치즈 박물관</strong>: 스위스 대표 음식인 치즈의 제조 과정을 눈앞에서 관람하고, 갓 만들어진 신선한 치즈를 맛보며 오감을 자극하는 학습이 이루어짐.</li>
+                <li><strong>바젤 장난감 세계 박물관</strong>: 2,500마리의 테디베어와 정교한 인형의 집들이 전시되어 있어 아이들은 물론 어른들에게도 동심을 자극하는 방대한 규모를 자랑함.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 8. 스위스 테마별 추천 박물관</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>박물관 명칭</th>
+                        <th>위치</th>
+                        <th>주요 테마</th>
+                        <th>팁</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>교통 박물관</td>
+                        <td>루체른</td>
+                        <td>기차, 자동차, 항공기</td>
+                        <td>야외 놀이 시설이 잘 되어 있음</td>
+                    </tr>
+                    <tr>
+                        <td>린트 초콜릿의 집</td>
+                        <td>취리히</td>
+                        <td>초콜릿 제조 및 시식</td>
+                        <td>시식 코너가 매우 충실함</td>
+                    </tr>
+                    <tr>
+                        <td>치즈 박물관</td>
+                        <td>그뤼에르</td>
+                        <td>전통 치즈 생산 공정</td>
+                        <td>아침 시간에 제조 관람 가능</td>
+                    </tr>
+                    <tr>
+                        <td>장난감 박물관</td>
+                        <td>바젤</td>
+                        <td>테디베어, 인형의 집</td>
+                        <td>세계 최대 규모의 인형 전시</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 11 -->
+    <section id="slide11" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">11. 이탈리아 인문학 및 예술 여행 (주요 도시)</h2>
+            <span class="slide-number">Slide 11</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>밀라노의 역사와 현대</strong>: 밀라노 대성당(두오모)의 웅장함을 감상하고 비토리오 에마누엘레 2세 갤러리아에서 유럽의 근대 건축미와 쇼핑 문화를 동시에 체험함.</li>
+                <li><strong>피렌체 르네상스의 중심</strong>: 우피치 미술관에서 거장들의 원화를 감상하고, 미켈란젤로 광장에서 도시 전체의 파노라마 뷰를 보며 르네상스 인문학의 정수를 배움.</li>
+                <li><strong>볼로냐 대학과 지식의 탐구</strong>: 세계에서 가장 오래된 대학 중 하나인 볼로냐 대학과 마조레 광장을 방문하여 유럽 지성사의 흐름을 이해하는 시간을 가짐.</li>
+                <li><strong>로마 고대 문명의 현장</strong>: 콜로세움, 포로로마노, 판테온 등을 통해 로마 제국의 역사와 건축 기술을 현장에서 직접 확인하며 역사적 통찰력을 기름.</li>
+                <li><strong>전용 코우치 이동 및 숙식</strong>: 도시 간 이동은 안전한 전용 차량을 이용하며, 현지식과 한식을 적절히 배합하여 학생들의 컨디션 유지를 최우선으로 함.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 9. 이탈리아 도시별 인문학 탐방 포인트</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>도시</th>
+                        <th>주요 방문지</th>
+                        <th>교육적 가치</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>밀라노</td>
+                        <td>두오모 성당, 스포르체스코성</td>
+                        <td>고딕 건축의 정수와 역사적 성채</td>
+                    </tr>
+                    <tr>
+                        <td>피렌체</td>
+                        <td>우피치 미술관, 베키오 다리</td>
+                        <td>르네상스 예술과 메디치 가문의 역사</td>
+                    </tr>
+                    <tr>
+                        <td>볼로냐</td>
+                        <td>볼로냐 대학, 마조레 광장</td>
+                        <td>중세 대학 문화와 광장 민주주의</td>
+                    </tr>
+                    <tr>
+                        <td>로마</td>
+                        <td>콜로세움, 판테온, 트레비 분수</td>
+                        <td>고대 로마 제국의 문명과 도시 설계</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 12 -->
+    <section id="slide12" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">12. 바티칸 박물관 및 시스티나 성당 가이드 투어</h2>
+            <span class="slide-number">Slide 12</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>어린이 친화적 가이드 투어</strong>: 아이들의 눈높이에 맞춘 퀴즈와 보물 찾기 형식을 도입하여 지루할 수 있는 3시간의 박물관 투어를 재미있는 놀이 시간으로 전환함.</li>
+                <li><strong>스킵 서비스(우선 입장) 활용</strong>: 악명 높은 바티칸의 대기 줄을 서지 않고 바로 입장하는 패스트 트랙 서비스를 통해 시간 낭비를 최소화하고 학습 효율을 높임.</li>
+                <li><strong>소규모 그룹 투어의 장점</strong>: 10명 내외의 소수 정예로 운영되어 가이드가 학생 한 명 한 명에게 집중하고 상호작용하며 개인화된 교육 경험을 제공함.</li>
+                <li><strong>미켈란젤로의 걸작 감상</strong>: 시스티나 성당의 '최후의 심판'과 '아담의 창조'를 직접 관찰하며 서양 미술사상 최고의 걸작이 지닌 가치와 기법을 학습함.</li>
+                <li><strong>성 베드로 대성당의 건축미</strong>: 종교적 상징성을 넘어 건축학적 기념물로서의 성 베드로 대성당 내부를 탐방하며 르네상스와 바로크 양식의 화려함을 경험함.</li>
+            </ul>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>바티칸 시국은 세계에서 가장 방대한 미술 컬렉션을 보유하고 있어 사전 지식 없이 방문하면 아이들에게는 다소 버거운 일정이 될 수 있습니다. 하지만 인터랙티브 게임과 퀴즈가 포함된 가족 전용 투어를 활용하면 아이들이 라파엘로의 방이나 시스티나 성당의 프레스코화에 깊이 몰입하게 됩니다. 가이드는 아이들에게 예술 작품 속 숨겨진 이야기를 들려주며 상상력을 자극하고, '줄 서지 않는 입장' 혜택은 뜨거운 로마의 태양 아래서 지칠 틈 없이 투어를 시작하게 해줍니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 13 -->
+    <section id="slide13" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">13. 안전 사고 예방 및 비상 대응 체계</h2>
+            <span class="slide-number">Slide 13</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>현지 비상 연락망 구축</strong>: 인솔 교사, 현지 가이드, 숙소, 대사관 및 영사관을 잇는 24시간 비상 연락망을 가동하여 위급 상황 발생 시 즉각적으로 대응함.</li>
+                <li><strong>해외 감염병 관리 철저</strong>: 질병관리청의 정보를 수시로 확인하고 출국 전 필수 예방 접종을 완료하며, 현지에서 학생들의 건강 상태(발열, 설사 등)를 매일 체크함.</li>
+                <li><strong>사고 발생 시 즉시 보고</strong>: 인명 사고나 감염병 발생 시 유선으로 도교육청에 인지 즉시 보고하고, 육하원칙에 따른 사안 보고서를 제출하여 수습 대책을 마련함.</li>
+                <li><strong>요보호 학생 특별 관리</strong>: 신체 허약자나 기저 질환이 있는 학생을 사전에 파악하여 비상 약품을 구비하고, 활동 중 특별한 보호와 개별 안전 대책을 시행함.</li>
+                <li><strong>야간 생활 지도 및 통제</strong>: 숙박지에서의 무단이탈 방지를 위해 야간 근무조를 편성하고, 외부인 출입 통제 등 학생들의 안전한 휴식 환경을 보장함.</li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <h4>표 10. 국외 현장체험학습 사안 발생 시 조치 절차</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>단계</th>
+                        <th>주요 활동</th>
+                        <th>책임자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>사고 발생</td>
+                        <td>현장 응급 처치 및 현지 의료 기관 이송</td>
+                        <td>인솔 교사 및 가이드</td>
+                    </tr>
+                    <tr>
+                        <td>즉시 보고</td>
+                        <td>학교장 및 교육청 유선 보고 (인지 즉시)</td>
+                        <td>인솔 책임자</td>
+                    </tr>
+                    <tr>
+                        <td>사안 수습</td>
+                        <td>보호자 연락 및 보험 처리 진행</td>
+                        <td>학교장 및 행정실</td>
+                    </tr>
+                    <tr>
+                        <td>사후 보고</td>
+                        <td>사안 보고서 전자문서 제출 및 결과 환류</td>
+                        <td>업무 담당자</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Slide 14 -->
+    <section id="slide14" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">14. 계약 체결 및 위약금 정산 기준</h2>
+            <span class="slide-number">Slide 14</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>전자 계약 시스템 활용</strong>: 계약의 투명성을 위해 G2B나 S2B 등 지정정보처리장치를 이용하며, 금액에 따라 수의계약이나 일반 입찰 방식을 선택함.</li>
+                <li><strong>업체 선정 시 안전성 평가</strong>: 제안서 평가 시 차량의 연식, 안전요원 보유 상태, 사고 대응 계획 등을 중점적으로 심사하여 역량 있는 업체를 선발함.</li>
+                <li><strong>표준약관 및 보험 명시</strong>: 공정거래위원회 여행업 표준약관을 적용하고, 학생과 인솔자 전원을 대상으로 보상 범위가 충분한 여행자 보험 가입을 계약서에 명시함.</li>
+                <li><strong>부득이한 사유의 계약 해지</strong>: 천재지변, 감염병, 정부 명령 등 불가항력적인 사유로 여행 목적 달성이 불가능할 경우 위약금 없이 계약금 환급이 가능함을 인지함.</li>
+                <li><strong>정산 및 잔액 처리</strong>: 활동 종료 후 10일 이내에 경비를 정산하고 잔액은 학부모에게 신속히 환불하며, 모든 집행 내역을 학교 홈페이지에 공개함.</li>
+            </ul>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>현장체험학습 관련 계약은 학교 행정의 청렴도를 보여주는 척도입니다. 추정 가격이 2천만 원을 초과하는 경우 반드시 2인 이상의 견적을 받아 경쟁을 유도하고, 2단계 입찰을 통해 규격과 가격을 동시에 검증해야 합니다. 특히 최근 감염병 확산과 같은 비상 상황 시에는 국외여행표준약관 제12조에 따라 여행자의 안전을 위해 부득이하게 변경이나 해지가 가능하며, 이에 따른 위약금 감경 기준을 명확히 숙지하여 학교의 재정적 피해를 막아야 합니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 15 -->
+    <section id="slide15" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">15. 교통 안전 관리 및 운전자 적격 확인</h2>
+            <span class="slide-number">Slide 15</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>운전자 적격 여부 사전 조회</strong>: 계약 시 운송사업자에게 '교통안전정보 조회결과 통보서'를 요구하여 운전자의 면허 상태와 무사고 경력을 철저히 검증함.</li>
+                <li><strong>출발 당일 음주 감지 실시</strong>: 출발 전 학교장이나 인솔 책임자가 경찰서의 협조를 받거나 자체 측정기를 사용하여 운전자의 음주 여부를 확인하고 이상 시 즉시 교체함.</li>
+                <li><strong>차량 안전 점검 확인</strong>: 타이어 마모 상태, 소화기 및 비상 탈출 망치 비치 여부, 안전띠 작동 여부 등을 출발 전 점검표를 활용해 육하원칙에 따라 확인함.</li>
+                <li><strong>휴식 시간 보장 및 과속 금지</strong>: 2시간 운행 시 15분 이상의 휴식 시간을 보장하고, 대열 운행 및 과속 등 난폭 운전을 금지하도록 운전자 교육을 실시함.</li>
+                <li><strong>차로이탈 경고장치 우선 계약</strong>: 졸음운전 및 전방 추돌 사고 예방 효과가 입증된 차로이탈경고장치(LDWS)가 설치된 차량을 우선적으로 배차받도록 계약함.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 16 -->
+    <section id="slide16" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">16. 여행지별 건강 수칙 및 개인 관리</h2>
+            <span class="slide-number">Slide 16</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>손 씻기 및 위생 관리</strong>: 외출 후 또는 식사 전에는 반드시 흐르는 물에 비누로 손을 씻어 수인성 및 식품 매개 감염병을 예방함.</li>
+                <li><strong>음식물 섭취 주의 사항</strong>: 길거리 음식이나 얼음 섭취를 피하고, 고기 등은 완전히 익혀 먹으며 반드시 검증된 생수나 탄산수만을 마시도록 지도함.</li>
+                <li><strong>해외 감염병 예방 접종</strong>: 방문 국가의 감염병 유행 정보를 확인하고 공수병(광견병) 등 필요한 예방 접종을 출국 전에 완료하며 관련 정보를 학생들에게 공유함.</li>
+                <li><strong>야생 동물 접촉 금지</strong>: 원숭이, 박쥐, 낙타 등 현지 야생 동물과의 접촉을 피하고, 동물에게 물리거나 긁혔을 경우 즉시 물로 소독하고 현지 의료 기관을 방문함.</li>
+                <li><strong>기후 변화 및 컨디션 조절</strong>: 이탈리아의 폭염이나 스위스의 고산지대 추위에 적절히 대응할 수 있는 옷차림을 준비하고 충분한 휴식을 통해 면역력을 유지함.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 17 -->
+    <section id="slide17" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">17. 이탈리아·스위스 이동 경로 최적화 (시각화)</h2>
+            <span class="slide-number">Slide 17</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>도시 간 기차 연결망 활용</strong>: 스위스의 촘촘한 기차망(SBB)과 이탈리아의 고속열차를 연계하여 주요 도시 간 이동 시간을 최소화하고 학습 시간을 확보함.</li>
+                <li><strong>인터라켄을 거점으로 한 스위스 일주</strong>: 인터라켄에 숙소를 정하고 루체른, 체르마트, 융프라우를 당일치기로 방문함으로써 짐 이동의 번거로움을 덜어냄.</li>
+                <li><strong>이탈리아 북부에서 남부로의 흐름</strong>: 밀라노(입국)-볼로냐-피렌체-로마(출국)로 이어지는 효율적인 루트를 통해 서양 문명의 발전 과정을 시간 순서대로 체험함.</li>
+                <li><strong>국경 이동 구간의 풍경 감상</strong>: 스위스에서 이탈리아로 넘어가는 구간의 알프스 산악 풍경은 그 자체로 훌륭한 교육적 볼거리이므로 창가 좌석 확보 등 세심한 배려를 함.</li>
+            </ul>
+        </div>
+        <div class="mermaid-container">
+            <pre class="mermaid">
+graph LR
+    A[취리히 공항 입국] --> B[루체른/기차 박물관]
+    B --> C[인터라켄/융프라우]
+    C --> D[체르마트/마테호른]
+    D --> E[밀라노/두오모]
+    E --> F[피렌체/르네상스]
+    F --> G[로마/바티칸 출국]
+            </pre>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>효율적인 경로는 여행의 피로도를 줄이고 더 많은 것을 배울 수 있게 합니다. 스위스 패스를 이용하면 대부분의 이동이 자유롭지만, 장거리 구간이나 야간 열차는 미리 예약하는 것이 안전합니다. 이탈리아 내에서는 소매치기를 방지하기 위해 짐 보관이 용이한 고속열차 좌석을 선택하는 것이 좋으며, 기차역 내에서 학생들의 인원 점검을 수시로 실시해야 합니다. 특히 스위스에서 이탈리아로 넘어갈 때 유심 설정이 변경될 수 있으므로 국경 부근에서 통신 상태를 재확인하여 비상 연락망에 공백이 생기지 않도록 관리합니다.</p>
+        </div>
+    </section>
+
+    <!-- Slide 18 -->
+    <section id="slide18" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">18. 디지털 도구 및 어플리케이션 활용</h2>
+            <span class="slide-number">Slide 18</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>SBB Mobile (스위스 철도청)</strong>: 정확한 열차 시간표, 플랫폼 위치, 연착 정보 등을 실시간으로 제공하여 스위스 내 모든 이동을 완벽하게 지원하는 필수 앱임.</li>
+                <li><strong>해외안전여행 앱 (외교부)</strong>: 방문 국가의 위기 상황, 여행 경보 단계, 가까운 대사관 위치 정보를 실시간으로 수신하여 학생 안전 관리에 활용함.</li>
+                <li><strong>해외감염병 NOW</strong>: 국가별 감염병 유행 정보와 예방 수칙, 검역 절차 등을 미리 확인하여 현지에서의 질병 발생 위험을 사전에 차단함.</li>
+                <li><strong>실시간 환전 및 결제 앱</strong>: 트래블 월렛 등을 통해 현지 환율을 즉시 확인하고 필요한 만큼만 충전하여 소지품 도난 시 피해를 최소화함.</li>
+                <li><strong>그룹 SNS 연락망 활용</strong>: 인솔자와 학생들 간의 실시간 소통을 위해 그룹 채팅방을 운영하며, 위치 공유 기능을 통해 낙오자 발생을 예방함.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 19 -->
+    <section id="slide19" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">19. 보험 가입 및 피해 보상 절차</h2>
+            <span class="slide-number">Slide 19</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>포괄적인 여행자 보험 가입</strong>: 상해, 질병으로 인한 사망 및 후유 장해는 물론, 의료비와 배상 책임, 휴대품 손해 보상을 모두 포함한 보험에 가입함.</li>
+                <li><strong>국외 특수 요율 적용 확인</strong>: 국외 현지 의료비 수준을 고려하여 보장 한도를 높게 설정하고, 특히 고위험 활동(패러글라이딩 등) 포함 시 관련 보장이 되는지 확인함.</li>
+                <li><strong>보험증권 및 보상 절차 숙지</strong>: 인솔자는 보험증권 사본을 상시 휴대하고 사고 발생 시 현지 의료 기관의 진단서와 영수증 등 필요한 증빙 서류를 빠짐없이 챙김.</li>
+                <li><strong>영업배상책임보험 확인</strong>: 이용하는 업체(여행사, 숙소, 차량)가 적절한 영업배상책임보험에 가입되어 있는지 계약 단계에서 증빙 서류를 통해 검증함.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 20 -->
+    <section id="slide20" class="slide-card">
+        <div class="slide-header">
+            <h2 class="slide-title">20. 여행 마무리 및 사후 관리</h2>
+            <span class="slide-number">Slide 20</span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>체계적인 경비 정산</strong>: 여행 종료 후 10일 이내에 실제 집행된 비용을 정산하고, 잔액이 발생할 경우 지체 없이 학부모에게 환불하여 신뢰를 구축함.</li>
+                <li><strong>만족도 설문 조사 실시</strong>: 학생과 학부모를 대상으로 시설, 식사, 프로그램, 안전 등에 대한 만족도를 조사하고 그 결과를 분석함.</li>
+                <li><strong>운영 결과 사후 공개</strong>: 학생 1인당 소요 경비와 만족도 조사 결과를 활동 종료 14일 이내에 학교 및 도교육청 홈페이지에 탑재하여 투명하게 공개함.</li>
+                <li><strong>체험 활동 일지 및 보고서 작성</strong>: 학생들은 여행 중 느낀 점과 배운 내용을 바탕으로 인문학 보고서를 작성하며, 우수 사례는 학교 내에서 공유하여 교육 성과를 확산함.</li>
+                <li><strong>차기 계획을 위한 환류 작업</strong>: 평가회에서 도출된 문제점과 개선 필요 사항을 기록하여 다음 연도 현장체험학습 계획 수립 시 귀중한 자료로 활용함.</li>
+            </ul>
+        </div>
+        <div class="description-box">
+            <span class="description-title">상세 설명</span>
+            <p>여행의 끝은 정산과 기록으로 완성됩니다. 단순히 즐거웠던 기억을 넘어 학생들이 작성한 인문학 보고서는 이번 여행이 교육적으로 어떤 의미가 있었는지 증명하는 중요한 결과물입니다. 또한 정산 과정에서 발생한 잔액 처리를 투명하게 집행함으로써 수익자 부담 경비 운영의 공정성을 확보해야 합니다. 마지막으로 평가회에서 나온 의견들, 예를 들어 "이탈리아 식당이 너무 짰다"거나 "스위스 패스 8일권이 더 효율적이었다"는 식의 실질적인 팁들을 매뉴얼화하여 학교의 소중한 자산으로 남겨야 합니다.</p>
+        </div>
+    </section>
+
+    <!-- Analogy Section -->
+    <div class="analogy">
+        <h3>[비유를 통한 이해]</h3>
+        <p>성공적인 이탈리아·스위스 여행은 <strong>'정교한 스위스 시계'</strong>를 조립하는 과정과 같습니다. 계획, 안전, 교육, 행정이라는 각각의 부품들이 매뉴얼이라는 설계도에 따라 정확하게 맞물릴 때, 비로소 사고 없이 완벽하게 작동하는 최고의 교육 활동이 완성됩니다. 부품 하나가 어긋나면 시계가 멈추듯, 우리 아이들의 안전과 학습 효과도 작은 수칙 하나를 소홀히 할 때 위협받을 수 있음을 명심해야 합니다.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 현장체험학습 운영 가이드 | All Rights Reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
