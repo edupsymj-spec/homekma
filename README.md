@@ -26,13 +26,20 @@
 	- Raw source: https://raw.githubusercontent.com/edupsymj-spec/homekma/main/ai_studio_code%20%2816%29.html
 - `travel_lmslide.md` : 슬라이드용 마크다운 소스
 	- Raw source (Markdown): https://raw.githubusercontent.com/edupsymj-spec/homekma/main/travel_lmslide.md
-- `travel_lmslide.pptx` : `travel_lmslide.md`에서 pandoc으로 생성한 PPTX (바이너리—브라우저에서 직접 열리거나 다운로드 가능)
-	- Raw download: https://raw.githubusercontent.com/edupsymj-spec/homekma/main/travel_lmslide.pptx
+- `travelnew_slide.md` : 새로운 슬라이드용 마크다운 소스
+	- Raw source (Markdown): https://raw.githubusercontent.com/edupsymj-spec/homekma/main/travelnew_slide.md
+- `travelnew_slide.pptx` : `travelnew_slide.md`에서 pandoc으로 생성한 PPTX (바이너리—브라우저에서 직접 열리거나 다운로드 가능)
+	- Raw download: https://raw.githubusercontent.com/edupsymj-spec/homekma/main/travelnew_slide.pptx
 - `README.md` : 이 파일
 	- Raw source: https://raw.githubusercontent.com/edupsymj-spec/homekma/main/README.md
 
 참고
 - GitHub Pages가 활성화되어 있지 않으면 `GitHub Pages` 링크가 작동하지 않을 수 있습니다.
 - `htmlpreview`는 원격의 raw HTML을 렌더링해 보여주는 서비스입니다. 비정상적 CSS/스크립트가 포함된 경우 일부 동작이 제한될 수 있습니다.
+
+## 작업 내용
+- **pandoc 설치**: Ubuntu 환경에서 `sudo apt update && sudo apt install -y pandoc` 명령어로 pandoc을 설치했습니다.
+- **Markdown to PPTX 변환**: `travelnew_slide.md` 파일을 pandoc을 사용하여 PPTX 파일로 변환했습니다. 명령어: `pandoc travelnew_slide.md -o travelnew_slide.pptx`.
+- **Git 커밋 및 푸시**: 변환된 `travelnew_slide.pptx` 파일을 git 저장소에 추가, 커밋하고 원격 저장소에 푸시했습니다. 커밋 메시지: "Add PPTX file converted from travelnew_slide.md using pandoc".
 
 (최종 업데이트: 2025-12-24)
