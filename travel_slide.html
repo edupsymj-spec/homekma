@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이탈리아·스위스 체험학습 가이드</title>
+    
+    <!-- Reveal.js CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css" id="theme">
+    
+    <!-- Font Awesome & Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+    <style>
+        /* 1. Global Background & Typography */
+        body {
+            background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%); /* Deep Green to Mint Gradient */
+            font-family: 'Noto Sans KR', sans-serif;
+            height: 100vh;
+        }
+
+        /* 2. Glassmorphism Design System */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 40px !important;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        /* 3. Font Size Constraints (Requested) */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-size: 24pt !important;
+            font-weight: 700 !important;
+            text-transform: none !important;
+            margin-bottom: 30px !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        .reveal p, .reveal li, .reveal div, .reveal td, .reveal th {
+            font-size: 17pt !important;
+            line-height: 1.6 !important;
+            font-weight: 400;
+        }
+
+        /* 4. Utility Classes */
+        .highlight { color: #f1c40f; font-weight: bold; }
+        .accent { color: #2ecc71; font-weight: bold; }
+        .center-text { text-align: center; }
+        
+        /* Table Styling */
+        .reveal table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+        .reveal th {
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding: 10px;
+        }
+        .reveal td {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 10px;
+        }
+
+        /* Mermaid Diagram Adjustment */
+        .mermaid {
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            padding: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="reveal">
+    <div class="slides">
+
+        <!-- Slide 1: Title -->
+        <section>
+            <div class="glass center-text">
+                <i class="fas fa-plane-departure fa-3x" style="margin-bottom:20px;"></i>
+                <h1>이탈리아·스위스 현장체험학습<br>운영 가이드</h1>
+                <p style="margin-top: 30px; opacity: 0.8;">안전하고 교육적인 국외 여행을 위한 매뉴얼</p>
+                <p style="font-size: 14pt !important;">2025학년도 교육과정 연계 프로그램</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Overview -->
+        <section>
+            <div class="glass">
+                <h2>1. 개요 및 목적</h2>
+                <ul>
+                    <li class="fragment fade-up"><i class="fas fa-book"></i> <strong>교육과정 연계:</strong> 학생의 자율성과 창의성 함양</li>
+                    <li class="fragment fade-up"><i class="fas fa-globe"></i> <strong>글로벌 소양:</strong> 이탈리아(역사) + 스위스(자연) 체험</li>
+                    <li class="fragment fade-up"><i class="fas fa-check-circle"></i> <strong>안전 제일:</strong> 도교육청 매뉴얼 준수 및 철저한 관리</li>
+                    <li class="fragment fade-up"><i class="fas fa-users"></i> <strong>민주적 절차:</strong> 선호도 조사 및 위원회 심의 운영</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 3: Scale & Rules -->
+        <section>
+            <div class="glass">
+                <h2>2. 유형 및 규모 기준</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>소규모</th>
+                            <th>국외(본 건)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>학생 수</td>
+                            <td>100명 미만</td>
+                            <td>제한 없음</td>
+                        </tr>
+                        <tr>
+                            <td>학부모 동의</td>
+                            <td>자율</td>
+                            <td class="highlight">90% 이상 필수</td>
+                        </tr>
+                        <tr>
+                            <td>컨설팅</td>
+                            <td>권장</td>
+                            <td class="highlight">의무 실시</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:20px;">* 국외 활동은 학생 50명당 1명 이상의 <span class="accent">안전요원</span> 배치가 필수입니다.</p>
+            </div>
+        </section>
+
+        <!-- Slide 4: Process Flow -->
+        <section>
+            <div class="glass">
+                <h2>3. 추진 절차 (Flow)</h2>
+                <div class="mermaid">
+                graph LR
+                    A[계획수립] --> B[위원회구성]
+                    B --> C[사전답사]
+                    C --> D[운영위심의]
+                    D --> E[전자계약]
+                    E --> F[안전교육]
+                    F --> G[현지활동]
+                    G --> H[정산/공개]
+                </div>
+                <p class="fragment">준비부터 사후 관리까지 모든 절차는 투명하게 공개됩니다.</p>
+            </div>
+        </section>
+
+        <!-- Slide 5: Preparation -->
+        <section>
+            <div class="glass">
+                <h2>4. 필수 준비물 및 짐 싸기</h2>
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex:1;">
+                        <p><strong>🔒 안전/보안</strong></p>
+                        <ul>
+                            <li>프레임형 캐리어 (지퍼 X)</li>
+                            <li>스프링 스트랩 (폰 분실 방지)</li>
+                            <li>복대 및 와이어 자물쇠</li>
+                        </ul>
+                    </div>
+                    <div style="flex:1;">
+                        <p><strong>🧼 위생/생활</strong></p>
+                        <ul>
+                            <li>샤워기 필터 (석회수 대비)</li>
+                            <li>베드버그 스프레이</li>
+                            <li>멀티 어댑터 & 보조 배터리</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Currency -->
+        <section>
+            <div class="glass">
+                <h2>5. 환전 및 결제 시스템</h2>
+                <ul>
+                    <li><span class="highlight">이중 통화:</span> 이탈리아(EUR €) / 스위스(CHF ₣)</li>
+                    <li><span class="accent">트래블 카드 활용:</span> 트래블월렛, SOL 등 수수료 면제 카드 사용</li>
+                    <li><strong>팁:</strong> 스위스 상점 대부분 유로 결제 가능 (거스름돈은 프랑)</li>
+                    <li><strong>현금:</strong> 화장실, 소규모 상점용 소액 현금만 소지</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 7: Swiss Transport -->
+        <section>
+            <div class="glass">
+                <h2>6. 스위스 교통 패스 전략</h2>
+                <ul>
+                    <li class="fragment"><strong>스위스 트래블 패스:</strong> 기차/버스/유람선 무제한 + 박물관 500곳 무료</li>
+                    <li class="fragment"><strong>융프라우 VIP 패스:</strong> 융프라우 지역 집중 시 유리 (컵라면 무료 등)</li>
+                    <li class="fragment"><strong>SBB 앱:</strong> 실시간 열차 시간 및 플랫폼 확인 필수</li>
+                    <li class="fragment highlight">부모 패스 소지 시 만 16세 미만 자녀 무료 (패밀리 카드)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 8: Accommodation -->
+        <section>
+            <div class="glass">
+                <h2>7. 숙소 선정 전략</h2>
+                <ul>
+                    <li><strong>위치:</strong> 기차역(인터라켄 동역 등) 도보 5~10분 이내 (이동 최소화)</li>
+                    <li><strong>형태:</strong> 취사 가능한 아파트먼트 선호 (식비 절감)</li>
+                    <li><strong>안전:</strong> 지자체 안심 서비스를 통해 소방/전기 점검 완료된 곳</li>
+                    <li><strong>전망:</strong> 그린델발트(아이거 뷰) vs 인터라켄(교통 편리)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 9: Food & Water -->
+        <section>
+            <div class="glass">
+                <h2>8. 음식 및 물 관리</h2>
+                <p>스위스의 높은 물가(외식 1인 약 5~10만원) 극복 전략</p>
+                <ul>
+                    <li><span class="accent">Coop/Migros 마트:</span> 저녁 재료 구입 및 직접 조리</li>
+                    <li><span class="highlight">실온 식품:</span> 햇반, 컵라면, 볶음김치 등 한국에서 준비</li>
+                    <li><span class="highlight">물:</span> 석회수이므로 생수 구매 권장 (에비앙 등)</li>
+                    <li><strong>휴대용 포트:</strong> 접이식 실리콘 포트 지참 시 유용</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 10: Jungfrau -->
+        <section data-background="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop">
+            <div class="glass">
+                <h2>9. 융프라우 지역 탐방</h2>
+                <ul>
+                    <li><strong>융프라우요흐(3,454m):</strong> 만년설, 얼음궁전, 엽서 보내기</li>
+                    <li><strong>피르스트:</strong> 액티비티 천국 (짚라인, 트로티바이크)</li>
+                    <li><strong>멘리헨:</strong> 아이들을 위한 완만한 하이킹 & 놀이터</li>
+                    <li><span class="highlight">주의:</span> 고산병 예방을 위해 천천히 이동, 물 자주 섭취</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 11: Museums -->
+        <section>
+            <div class="glass">
+                <h2>10. 스위스 주요 박물관</h2>
+                <p>우천 시 대체 일정으로 완벽한 교육 장소</p>
+                <ul>
+                    <li><strong>루체른 교통 박물관:</strong> 육해공 교통 역사 체험 (만족도 1위)</li>
+                    <li><strong>취리히 린트 초콜릿:</strong> 초콜릿 제조 공정 견학 및 시식</li>
+                    <li><strong>그뤼에르 치즈 공장:</strong> 스위스 전통 치즈 만들기 참관</li>
+                    <li>* 스위스 트래블 패스 소지 시 대부분 무료 입장</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 12: Italy Cities -->
+        <section>
+            <div class="glass">
+                <h2>11. 이탈리아 인문학 여행</h2>
+                <ul>
+                    <li class="fragment"><strong>밀라노:</strong> 두오모 대성당 (고딕 건축의 정수)</li>
+                    <li class="fragment"><strong>피렌체:</strong> 우피치 미술관, 르네상스의 발상지</li>
+                    <li class="fragment"><strong>볼로냐:</strong> 세계 최초의 대학, 지성의 산실</li>
+                    <li class="fragment"><strong>로마:</strong> 콜로세움, 포로로마노 (고대 문명)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 13: Vatican -->
+        <section>
+            <div class="glass">
+                <h2>12. 바티칸 투어 가이드</h2>
+                <p>세상에서 가장 작은 나라, 가장 큰 예술</p>
+                <ul>
+                    <li><span class="highlight">패스트 트랙:</span> 대기 줄 없이 입장하는 예약 필수</li>
+                    <li><strong>어린이 투어:</strong> 퀴즈와 스토리텔링 위주의 눈높이 교육</li>
+                    <li><strong>핵심 작품:</strong> 미켈란젤로 '천지창조', '최후의 심판'</li>
+                    <li><strong>성 베드로 대성당:</strong> 세계 최대 규모 성당의 웅장함 체험</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 14: Safety Response -->
+        <section>
+            <div class="glass">
+                <h2>13. 안전사고 예방 및 대응</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>상황</th>
+                            <th>대응 조치</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>응급 환자</td>
+                            <td>현지 병원 이송 및 영사콜센터 연락</td>
+                        </tr>
+                        <tr>
+                            <td>여권 분실</td>
+                            <td>경찰 리포트 작성 → 대사관 임시 여권</td>
+                        </tr>
+                        <tr>
+                            <td>도난/소매치기</td>
+                            <td>현지 경찰 신고(보험용) 및 카드 정지</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="accent center-text" style="margin-top:10px;">영사콜센터: +82-2-3210-0404</p>
+            </div>
+        </section>
+
+        <!-- Slide 15: Contract -->
+        <section>
+            <div class="glass">
+                <h2>14. 계약 및 위약금 관리</h2>
+                <ul>
+                    <li><strong>G2B 전자계약:</strong> 투명성 확보를 위해 조달청 시스템 이용</li>
+                    <li><strong>표준약관 적용:</strong> 공정위 여행업 표준약관으로 학생 권익 보호</li>
+                    <li><strong>위약금 면제:</strong> 천재지변, 감염병 등 불가항력 시 전액 환불</li>
+                    <li><strong>정산:</strong> 활동 종료 후 10일 이내 완료 및 잔액 반환</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 16: Traffic Safety -->
+        <section>
+            <div class="glass">
+                <h2>15. 교통 안전 관리</h2>
+                <ul>
+                    <li><i class="fas fa-bus"></i> <strong>차량 점검:</strong> 타이어 마모, 소화기 비치 확인</li>
+                    <li><i class="fas fa-user-check"></i> <strong>운전자:</strong> 출발 전 음주 감지 실시, 졸음 운전 방지</li>
+                    <li><i class="fas fa-train"></i> <strong>기차 안전:</strong> 승강장 노란 선 준수, 발 빠짐 주의</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>이탈 경보:</strong> 차량 내 차로이탈경고장치 확인</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 17: Health -->
+        <section>
+            <div class="glass">
+                <h2>16. 여행 건강 수칙</h2>
+                <ul>
+                    <li><strong>손 씻기:</strong> 감염병 예방의 기본, 수시로 세정</li>
+                    <li><strong>물 섭취:</strong> 검증된 생수(Bottled Water)만 음용</li>
+                    <li><strong>익혀 먹기:</strong> 날음식 자제, 길거리 음식 주의</li>
+                    <li><strong>야생동물:</strong> 접촉 금지 (광견병 등 예방)</li>
+                    <li><strong>준비:</strong> 개인 상비약(소화제, 밴드, 해열제) 필수 지참</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 18: Route Map -->
+        <section>
+            <div class="glass">
+                <h2>17. 이동 경로 최적화</h2>
+                <div class="mermaid">
+                graph LR
+                    IN[취리히 IN] --> LUZ[루체른]
+                    LUZ --> INT[인터라켄]
+                    INT --> ZER[체르마트]
+                    ZER --> MIL[밀라노]
+                    MIL --> FIR[피렌체]
+                    FIR --> ROM[로마 OUT]
+                </div>
+                <p>스위스(자연) ➡ 이탈리아(역사) 순서로 이동하며 피로도 관리</p>
+            </div>
+        </section>
+
+        <!-- Slide 19: Digital & Insurance -->
+        <section>
+            <div class="glass">
+                <h2>18. 디지털 도구 및 보험</h2>
+                <ul>
+                    <li><strong>필수 앱:</strong> SBB(스위스철도), 구글맵, 파파고, 외교부 안전여행</li>
+                    <li><strong>여행자 보험:</strong> 사망/후유장해 + 의료비 + 휴대품 손해 포함</li>
+                    <li><strong>SNS 소통:</strong> 인솔자-학생 간 단톡방으로 실시간 위치 공유</li>
+                    <li><strong>데이터:</strong> 유심/로밍 사전 준비로 연락 두절 방지</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 20: Closing -->
+        <section>
+            <div class="glass">
+                <h2>19. 사후 관리 및 환류</h2>
+                <ul>
+                    <li><strong>만족도 조사:</strong> 학생/학부모 대상 설문 실시</li>
+                    <li><strong>결과 공개:</strong> 종료 후 14일 이내 홈페이지 탑재</li>
+                    <li><strong>보고서 작성:</strong> 학생 개개인의 '인문학 탐방 보고서'</li>
+                    <li><strong>평가회:</strong> 개선점 도출하여 차기 년도 계획 반영</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 21: End -->
+        <section>
+            <div class="glass center-text">
+                <h1>안전하고 행복한 여행,<br>철저한 준비에서 시작됩니다.</h1>
+                <p style="margin-top: 50px;">Q & A</p>
+                <i class="fas fa-question-circle fa-3x" style="color: rgba(255,255,255,0.7);"></i>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+<script>
+    // Initialize Reveal.js
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        transition: 'convex', // convex, concave, zoom, fade
+        backgroundTransition: 'zoom'
+    });
+
+    // Initialize Mermaid.js
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+</script>
+
+</body>
+</html>
